@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      body,
+      input,
+      select,
+      textarea {
+        color: rgba(255, 255, 255, 0.55);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16.5pt;
+        font-weight: normal;
+        line-height: 1.75;
+      }
+
+      #sidebar {
+        background: #312450;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      #sidebar section {
+        padding: 10px 0 0 30px;
+      }
+
+      #sidebar section a {
+        margin-top: 5px;
+      }
+
+      .ui.divided.list > .item {
+        border-top: 1px solid rgba(34, 36, 38, 0.15);
+        margin-bottom: 15px;
+      }
+
+      .mt-10 {
+        margin-top: 10px;
+      }
+      #mainbar {
+        /* background-image: url("/images/140253_www-intrawallpaper-com-wallpapers-pattern-page-1_1920x1200_h.jpg.jpeg"); */
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        justify-content: center;
+      }
+
+       #mainbar #zero-page {
+
+        height: 100%;
+        width: 100%;
+        background: #5052b5;
+      }
+
+      #mainbar #first-page {
+        padding: 0 50px 0 50px;
+        height: 100%;
+        width: 100%;
+        background: #5052b5;
+      }
+
+      #mainbar #second-page {
+        padding: 30px 50px 0 50px;
+        height: 100%;
+        width: 100%;
+        background: #b74e91;
+      }
+
+      #mainbar #fourth-page{
+        padding: 30px 50px 0 50px;
+        height: 100%;
+        width: 100%;
+        background: black;
+      }
+
+     #fourth-page p{
+      color: navajowhite;
+      }
+
+      #mainbar #first-page h2 {
+        font-size: 1.75rem;
+        padding-left: 25px;
+        color: #ffffff;
+      }
+      #mainbar #first-page p {
+        /* font-size: 2rem; */
+        margin: 0 0 2em 0;
+        padding-left: 25px;
+        color: #ffffff;
+      }
+
+      #logo {
+        border-style: none;
+        height: 10%;
+        width: 20%;
+      }
+
+      #inner h1 {
+        font-size: 4rem;
+      }
+      #inner h3 {
+        font-size: 2rem;
+      }
+
+      #linkFont {
+        border: 0;
+        color: rgba(255, 255, 255, 0.35);
+        display: block;
+        font-size: 0.6em;
+        font-weight: bold;
+        letter-spacing: 0.25em;
+      }
+
+      #linkFont:hover {
+        border: 0;
+        color: rgba(255, 255, 255, 255);
+      }
+
+      .ui.huge.list {
+        margin-top: 100px;
+      }
+
+      img {
+        background-position: center center;
+        background-size: cover;
+        /* border-radius: 3rem; */
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .border-line {
+        border-bottom: solid;
+        width: 350px;
+      }
+
+      .ui.grid > .row > .column > img,
+      .ui.grid > .row > img {
+        max-width: none !important;
+      }
+
+      .mt-50 {
+        margin-top: 50px;
+      }
+      #second-page {
+        padding: 30px;
+
+        height: 100%;
+        width: 100%;
+      }
+
+      .p-50 {
+        padding: 50px;
+      }
+
+      #mainbar {
+        scroll-behavior: smooth;
+      }
+
+      .ui.grid > .column:not(.row),
+      .ui.grid > .row > .column {
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+      }
+
+      .features {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-radius: 0.25em;
+    border: solid 1px rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0 0 2em 0;
+}
+
+.features section {
+    padding: 3.5em 3em 1em 7em;
+    width: 50%;
+    border-top: solid 1px rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.features section h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 0.5em 0;
+}
+
+.profile-photo{
+ width: 100%;
+ height: 100%;
+
+}
+.head{
+width: 100%;
+height: 35%;
+background: black;
+}
+
+.head h1{
+  color: white;
+  justify-content: center;
+    display: flex;
+    margin-top: 6% !important;
+    font-size: 5rem;
+    font-family: sans-serif;
+    font-variant-caps: all-small-caps;
+}
+.head p{
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+}
+.about-me{
+  background: white;
+  height: 65%;
+}
+
+.ui.grid {
+height: 100% !important;
+margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 0rem !important;
+    margin-right: 0rem !important;
+}
+
+.ui.grid>.external-padding{
+  
+    padding: 0 !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+
+.ui.grid>.profile-padding {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+
+
+    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui grid">
+      <div class="row external-padding">
+        <div id="sidebar" class="four wide column">
+          <section>
+            <div>
+              <img id="logo" src="images/asset.png" />
+              <h1>CHIRAG LODHA</h1>
+            </div>
+            <div class="four wide column">
+              <i class=" big facebook icon"></i>
+              <i class="big linkedin icon"></i>
+              <i class="big github icon"></i>
+            </div>
+
+            <div class="ui center aligned grid mt-10">
+              <div class="ui huge divided animated list animated fadeInUp">
+                <div class="item">
+                  <div class="ui center aligned header">
+                    <a id="linkFont" href="#zero-page">About me</a>
+                    <div class="border-line"></div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="ui center aligned header">
+                    <a id="linkFont" href="#first-page">Work Experience</a>
+                    <div class="border-line"></div>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="ui center aligned header">
+                    <a id="linkFont" href="#second-page"> Technologies i know</a>
+                    <div class="border-line"></div>
+                  </div>
+                </div>
+            
+                <div class="item">
+                  <div class="ui center aligned header">
+                    <a href="#fourth-page" id="linkFont">Projects i did</a>
+                    <div class="border-line"></div>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <div class="ui center aligned header">
+                    <a id="linkFont">Blogs i write</a>
+                    <div class="border-line"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="mainbar" class="twelve wide column">
+
+
+
+            <section id="zero-page">
+                <div class="ui grid animated fadeInDown">
+                  <div class="head"><h1>Hello i am</h1>
+                  <br>
+                  <p>
+                      <span style='color: blue'><</span>
+                      <span style='color: white'>C</span>
+                      <span style='color: cyan'>H</span>
+                      <span style='color: white'>I</span>
+                      <span style='color: white'>R</span>
+                      <span style='color: cyan'>A</span>
+                      <span style='color: white'>G</span>
+                      <span style='color:blue'>/></span>
+
+                    </p>
+                  
+                  </div>
+                  <div class="twelve wide column about-me"><p>Passionate about Web development , ui ux development</p></div>
+                  <div class="four wide column profile-padding">
+                  <img class="profile-photo" src="./images/21806972.jpg">
+                </div>
+                </div>
+              </section>
+
+
+
+
+
+
+          <section id="first-page">
+            <div class="ui grid animated fadeInUp">
+              <div class="row mt-50">
+                <div class="three wide column">
+                  <img src="images/21806972.jpg" />
+                </div>
+                <div class="thirteen wide column">
+                  <div id="inner">
+                    <h2>Sed ipsum dolor</h2>
+                    <p>
+                      Phasellus convallis elit id ullamcorper pulvinar. Duis
+                      aliquam turpis mauris, eu ultricies erat malesuada quis.
+                      Aliquam dapibus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-50">
+                <div class="three wide column">
+                  <img src="images/21806972.jpg" />
+                </div>
+                <div class="thirteen wide column">
+                  <div id="inner">
+                    <h2>Sed ipsum dolor</h2>
+                    <p>
+                      Phasellus convallis elit id ullamcorper pulvinar. Duis
+                      aliquam turpis mauris, eu ultricies erat malesuada quis.
+                      Aliquam dapibus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-50">
+                <div class="three wide column">
+                  <img
+                    src="images/140253_www-intrawallpaper-com-wallpapers-pattern-page-1_1920x1200_h.jpg"
+                  />
+                </div>
+                <div class="thirteen wide column">
+                  <div id="inner">
+                    <h2>Sed ipsum dolor</h2>
+                    <p>
+                      Phasellus convallis elit id ullamcorper pulvinar. Duis
+                      aliquam turpis mauris, eu ultricies erat malesuada quis.
+                      Aliquam dapibus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mt-50">
+                <div class="three wide column">
+                  <img
+                    src="images/140253_www-intrawallpaper-com-wallpapers-pattern-page-1_1920x1200_h.jpg"
+                  />
+                </div>
+                <div class="thirteen wide column">
+                  <div id="inner">
+                    <h2>Sed ipsum dolor</h2>
+                    <p>
+                      Phasellus convallis elit id ullamcorper pulvinar. Duis
+                      aliquam turpis mauris, eu ultricies erat malesuada quis.
+                      Aliquam dapibus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- secondPage -->
+          <section id="second-page">
+            <div>
+              <h2>Skills i know</h2>
+              <p>
+                hjbfikbfeirfvberyeryvb eryifvbbrberyferyer rif ery feryf erf er
+                fer f fier f ef erf erf e fery ferfy er <br />evbewcecweh ce ec
+                wue we c ec weweu dwy
+              </p>
+              <div class="p-50">
+  
+                <div class="features">
+                  <section>
+                    <span class="icon major fa-code"></span>
+                    <h3>Lorem ipsum amet</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                  <section>
+                    <span class="icon major fa-lock"></span>
+                    <h3>Aliquam sed nullam</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                  <section>
+                    <span class="icon major fa-cog"></span>
+                    <h3>Sed erat ullam corper</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                  <section>
+                    <span class="icon major fa-desktop"></span>
+                    <h3>Veroeros quis lorem</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                  <section>
+                    <span class="icon major fa-chain"></span>
+                    <h3>Urna quis bibendum</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                  <section>
+                    <span class="icon major fa-diamond"></span>
+                    <h3>Aliquam urna dapibus</h3>
+                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                  </section>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+
+<!-- Fourth page -->
+<section id="fourth-page">
+  <div>
+    <h2>Projects i did</h2>
+    <p>
+      hjbfikbfeirfvberyeryvb eryifvbbrberyferyer rif ery feryf erf er
+      fer f fier f ef erf erf e fery ferfy er <br />evbewcecweh ce ec
+      wue we c ec weweu dwy
+    </p>
+    <div class="p-50">
+
+      <div class="features">
+        <section>
+          <span class="icon major fa-code"></span>
+          <h3>Lorem ipsum amet</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-lock"></span>
+          <h3>Aliquam sed nullam</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-cog"></span>
+          <h3>Sed erat ullam corper</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-desktop"></span>
+          <h3>Veroeros quis lorem</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-chain"></span>
+          <h3>Urna quis bibendum</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+        <section>
+          <span class="icon major fa-diamond"></span>
+          <h3>Aliquam urna dapibus</h3>
+          <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+        </section>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
